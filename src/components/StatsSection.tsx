@@ -44,22 +44,22 @@ const testimonials = [
 
 const StatsSection = () => {
   return (
-    <section className="py-24 bg-background">
-      <div className="container mx-auto px-6">
+    <section className="py-12 sm:py-16 lg:py-24 bg-background">
+      <div className="container mx-auto px-4 sm:px-6">
         {/* Stats Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-20">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 mb-16 lg:mb-20">
           {stats.map((stat, index) => (
             <div 
               key={index}
-              className="text-center space-y-3 group"
+              className="text-center space-y-2 lg:space-y-3 group"
             >
-              <div className="text-5xl lg:text-6xl font-bold text-primary group-hover:scale-110 transition-transform duration-300">
+              <div className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-primary group-hover:scale-110 transition-transform duration-300">
                 {stat.number}
               </div>
-              <div className="text-xl font-semibold text-foreground">
+              <div className="text-base sm:text-lg lg:text-xl font-semibold text-foreground">
                 {stat.label}
               </div>
-              <div className="text-muted-foreground text-sm">
+              <div className="text-muted-foreground text-xs sm:text-sm leading-tight">
                 {stat.description}
               </div>
             </div>
@@ -67,40 +67,40 @@ const StatsSection = () => {
         </div>
         
         {/* Testimonials */}
-        <div className="space-y-12">
-          <div className="text-center space-y-4">
-            <h2 className="text-4xl lg:text-5xl font-bold text-foreground">
+        <div className="space-y-8 lg:space-y-12">
+          <div className="text-center space-y-3 lg:space-y-4">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground">
               What Our
               <span className="text-primary block">Patients Say</span>
             </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto">
               Read testimonials from patients who have experienced our quality care 
               and commitment to health excellence.
             </p>
           </div>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
             {testimonials.map((testimonial, index) => (
               <div 
                 key={index}
-                className="bg-card p-8 rounded-2xl border border-primary/10 hover:border-primary/30 transition-all duration-300 hover:shadow-card"
+                className="bg-card p-6 lg:p-8 rounded-2xl border border-primary/10 hover:border-primary/30 transition-all duration-300 hover:shadow-card"
               >
-                <div className="space-y-6">
+                <div className="space-y-4 lg:space-y-6">
                   <div className="flex gap-1">
                     {[...Array(testimonial.rating)].map((_, i) => (
-                      <div key={i} className="w-5 h-5 bg-primary rounded-full"></div>
+                      <div key={i} className="w-4 h-4 lg:w-5 lg:h-5 bg-primary rounded-full"></div>
                     ))}
                   </div>
                   
-                  <p className="text-foreground leading-relaxed">
+                  <p className="text-sm sm:text-base text-foreground leading-relaxed">
                     "{testimonial.content}"
                   </p>
                   
-                  <div className="pt-4 border-t border-border">
-                    <div className="font-semibold text-foreground">
+                  <div className="pt-3 lg:pt-4 border-t border-border">
+                    <div className="text-sm lg:text-base font-semibold text-foreground">
                       {testimonial.name}
                     </div>
-                    <div className="text-sm text-muted-foreground">
+                    <div className="text-xs lg:text-sm text-muted-foreground">
                       {testimonial.role}
                     </div>
                   </div>
