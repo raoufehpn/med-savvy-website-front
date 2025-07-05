@@ -1,7 +1,11 @@
 import { Button } from "@/components/ui/button";
 import heroImage from "@/assets/doctor-hero.jpg";
+import { useLanguage } from "@/contexts/LanguageContext";
+import { useNavigate } from "react-router-dom";
 
 const HeroSection = () => {
+  const { t } = useLanguage();
+  const navigate = useNavigate();
   return (
     <section className="min-h-screen bg-gradient-hero flex items-center justify-center relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-r from-background via-background/80 to-transparent z-10" />
@@ -29,8 +33,13 @@ const HeroSection = () => {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start">
-              <Button variant="hero" size="lg" className="text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4">
-                Book Appointment
+              <Button 
+                variant="hero" 
+                size="lg" 
+                className="text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4"
+                onClick={() => navigate('/book-appointment')}
+              >
+                {t('hero.book')}
               </Button>
               <Button variant="outline" size="lg" className="text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4">
                 Learn More
