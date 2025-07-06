@@ -65,6 +65,13 @@ const Admin = () => {
   const [settings, setSettings] = useState<ClinicSettings | null>(null);
   const [loading, setLoading] = useState(false);
 
+  useEffect(() => {
+    if (user) {
+      fetchAppointments();
+      fetchSettings();
+    }
+  }, [user]);
+
   if (isLoading) {
     return (
       <div className="min-h-screen bg-background flex items-center justify-center">
@@ -76,11 +83,6 @@ const Admin = () => {
   if (!user) {
     return <AdminLogin />;
   }
-
-  useEffect(() => {
-    fetchAppointments();
-    fetchSettings();
-  }, []);
 
   const fetchAppointments = async () => {
     try {
@@ -227,28 +229,30 @@ const Admin = () => {
         </div>
 
         <Tabs defaultValue="appointments" className="space-y-6">
-          <TabsList className="grid w-full grid-cols-5">
-            <TabsTrigger value="appointments" className="flex items-center gap-2">
-              <Calendar className="w-4 h-4" />
-              Appointments
-            </TabsTrigger>
-            <TabsTrigger value="doctors" className="flex items-center gap-2">
-              <Users className="w-4 h-4" />
-              Doctors
-            </TabsTrigger>
-            <TabsTrigger value="blog" className="flex items-center gap-2">
-              <FileText className="w-4 h-4" />
-              Blog
-            </TabsTrigger>
-            <TabsTrigger value="patients" className="flex items-center gap-2">
-              <Users className="w-4 h-4" />
-              Patients
-            </TabsTrigger>
-            <TabsTrigger value="settings" className="flex items-center gap-2">
-              <Settings className="w-4 h-4" />
-              Settings
-            </TabsTrigger>
-          </TabsList>
+          <div className="overflow-x-auto">
+            <TabsList className="grid w-full grid-cols-5 min-w-fit">
+              <TabsTrigger value="appointments" className="flex items-center gap-2 whitespace-nowrap">
+                <Calendar className="w-4 h-4" />
+                <span className="hidden sm:inline">Appointments</span>
+              </TabsTrigger>
+              <TabsTrigger value="doctors" className="flex items-center gap-2 whitespace-nowrap">
+                <Users className="w-4 h-4" />
+                <span className="hidden sm:inline">Doctors</span>
+              </TabsTrigger>
+              <TabsTrigger value="blog" className="flex items-center gap-2 whitespace-nowrap">
+                <FileText className="w-4 h-4" />
+                <span className="hidden sm:inline">Blog</span>
+              </TabsTrigger>
+              <TabsTrigger value="patients" className="flex items-center gap-2 whitespace-nowrap">
+                <Users className="w-4 h-4" />
+                <span className="hidden sm:inline">Patients</span>
+              </TabsTrigger>
+              <TabsTrigger value="settings" className="flex items-center gap-2 whitespace-nowrap">
+                <Settings className="w-4 h-4" />
+                <span className="hidden sm:inline">Settings</span>
+              </TabsTrigger>
+            </TabsList>
+          </div>
 
           <TabsContent value="appointments">
             <Card>
@@ -256,17 +260,18 @@ const Admin = () => {
                 <CardTitle>Recent Appointments</CardTitle>
               </CardHeader>
               <CardContent>
-                <Table>
-                  <TableHeader>
-                    <TableRow>
-                      <TableHead>Patient</TableHead>
-                      <TableHead>Contact</TableHead>
-                      <TableHead>Appointment</TableHead>
-                      <TableHead>Date & Time</TableHead>
-                      <TableHead>Status</TableHead>
-                      <TableHead>Actions</TableHead>
-                    </TableRow>
-                  </TableHeader>
+                <div className="overflow-x-auto">
+                  <Table>
+                    <TableHeader>
+                      <TableRow>
+                        <TableHead className="min-w-[150px]">Patient</TableHead>
+                        <TableHead className="min-w-[120px]">Contact</TableHead>
+                        <TableHead className="min-w-[150px]">Appointment</TableHead>
+                        <TableHead className="min-w-[150px]">Date & Time</TableHead>
+                        <TableHead className="min-w-[100px]">Status</TableHead>
+                        <TableHead className="min-w-[200px]">Actions</TableHead>
+                      </TableRow>
+                    </TableHeader>
                   <TableBody>
                     {appointments.map((appointment) => (
                       <TableRow key={appointment.id}>
@@ -345,7 +350,8 @@ const Admin = () => {
                       </TableRow>
                     ))}
                   </TableBody>
-                </Table>
+                  </Table>
+                </div>
               </CardContent>
             </Card>
           </TabsContent>

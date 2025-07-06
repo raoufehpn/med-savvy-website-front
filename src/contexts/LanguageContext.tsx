@@ -188,19 +188,27 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
   const [language, setLanguage] = useState<Language>('en');
 
   useEffect(() => {
-    // Auto-detect language based on browser settings
-    const browserLang = navigator.language.toLowerCase();
-    if (browserLang.startsWith('ar')) {
-      setLanguage('ar');
-    } else if (browserLang.startsWith('fr')) {
-      setLanguage('fr');
+    // Auto-detect language based on browser settings on first load
+    const storedLang = localStorage.getItem('preferred-language');
+    if (storedLang && ['en', 'ar', 'fr'].includes(storedLang)) {
+      setLanguage(storedLang as Language);
     } else {
-      setLanguage('en');
+      const browserLang = navigator.language.toLowerCase();
+      if (browserLang.startsWith('ar')) {
+        setLanguage('ar');
+      } else if (browserLang.startsWith('fr')) {
+        setLanguage('fr');
+      } else {
+        setLanguage('en');
+      }
     }
+  }, []);
 
-    // Apply RTL for Arabic
+  useEffect(() => {
+    // Apply RTL for Arabic and store preference
     document.documentElement.dir = language === 'ar' ? 'rtl' : 'ltr';
     document.documentElement.lang = language;
+    localStorage.setItem('preferred-language', language);
   }, [language]);
 
   const t = (key: string): string => {
