@@ -9,6 +9,45 @@ export type Json =
 export type Database = {
   public: {
     Tables: {
+      admin_users: {
+        Row: {
+          created_at: string
+          email: string
+          failed_login_attempts: number | null
+          id: string
+          is_active: boolean | null
+          last_login_at: string | null
+          locked_until: string | null
+          name: string | null
+          password_hash: string
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          email: string
+          failed_login_attempts?: number | null
+          id?: string
+          is_active?: boolean | null
+          last_login_at?: string | null
+          locked_until?: string | null
+          name?: string | null
+          password_hash: string
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          email?: string
+          failed_login_attempts?: number | null
+          id?: string
+          is_active?: boolean | null
+          last_login_at?: string | null
+          locked_until?: string | null
+          name?: string | null
+          password_hash?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
       appointment_types: {
         Row: {
           color: string | null
@@ -125,10 +164,17 @@ export type Database = {
           excerpt_fr: string | null
           featured_image: string | null
           id: string
+          meta_description_ar: string | null
+          meta_description_en: string | null
+          meta_description_fr: string | null
+          meta_title_ar: string | null
+          meta_title_en: string | null
+          meta_title_fr: string | null
           published_at: string | null
           scheduled_at: string | null
           slug: string
           status: string | null
+          tags: string[] | null
           title_ar: string | null
           title_en: string
           title_fr: string | null
@@ -145,10 +191,17 @@ export type Database = {
           excerpt_fr?: string | null
           featured_image?: string | null
           id?: string
+          meta_description_ar?: string | null
+          meta_description_en?: string | null
+          meta_description_fr?: string | null
+          meta_title_ar?: string | null
+          meta_title_en?: string | null
+          meta_title_fr?: string | null
           published_at?: string | null
           scheduled_at?: string | null
           slug: string
           status?: string | null
+          tags?: string[] | null
           title_ar?: string | null
           title_en: string
           title_fr?: string | null
@@ -165,10 +218,17 @@ export type Database = {
           excerpt_fr?: string | null
           featured_image?: string | null
           id?: string
+          meta_description_ar?: string | null
+          meta_description_en?: string | null
+          meta_description_fr?: string | null
+          meta_title_ar?: string | null
+          meta_title_en?: string | null
+          meta_title_fr?: string | null
           published_at?: string | null
           scheduled_at?: string | null
           slug?: string
           status?: string | null
+          tags?: string[] | null
           title_ar?: string | null
           title_en?: string
           title_fr?: string | null
@@ -312,34 +372,43 @@ export type Database = {
       }
       doctors: {
         Row: {
+          bio: string | null
           created_at: string
           email: string | null
           id: string
           is_active: boolean | null
           name: string
           phone: string | null
+          photo_url: string | null
           specialization: string | null
           updated_at: string
+          working_hours: Json | null
         }
         Insert: {
+          bio?: string | null
           created_at?: string
           email?: string | null
           id?: string
           is_active?: boolean | null
           name: string
           phone?: string | null
+          photo_url?: string | null
           specialization?: string | null
           updated_at?: string
+          working_hours?: Json | null
         }
         Update: {
+          bio?: string | null
           created_at?: string
           email?: string | null
           id?: string
           is_active?: boolean | null
           name?: string
           phone?: string | null
+          photo_url?: string | null
           specialization?: string | null
           updated_at?: string
+          working_hours?: Json | null
         }
         Relationships: []
       }

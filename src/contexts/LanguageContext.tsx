@@ -51,6 +51,15 @@ const translations = {
     'admin.blog': 'Blog Management',
     'admin.patients': 'Patients',
     
+    // Admin Authentication
+    'admin.login.title': 'Admin Login',
+    'admin.login.subtitle': 'Access your clinic dashboard',
+    'admin.login.email': 'Email Address',
+    'admin.login.password': 'Password',
+    'admin.login.sign_in': 'Sign In',
+    'admin.login.signing_in': 'Signing in...',
+    'admin.logout': 'Logout',
+    
     // Blog
     'blog.title': 'Our Blog',
     'blog.readMore': 'Read More',
@@ -99,6 +108,15 @@ const translations = {
     'admin.blog': 'إدارة المدونة',
     'admin.patients': 'المرضى',
     
+    // Admin Authentication
+    'admin.login.title': 'تسجيل دخول الإدارة',
+    'admin.login.subtitle': 'ادخل إلى لوحة تحكم العيادة',
+    'admin.login.email': 'عنوان البريد الإلكتروني',
+    'admin.login.password': 'كلمة المرور',
+    'admin.login.sign_in': 'تسجيل الدخول',
+    'admin.login.signing_in': 'جاري تسجيل الدخول...',
+    'admin.logout': 'تسجيل الخروج',
+    
     // Blog
     'blog.title': 'مدونتنا',
     'blog.readMore': 'اقرأ المزيد',
@@ -146,6 +164,15 @@ const translations = {
     'admin.settings': 'Paramètres',
     'admin.blog': 'Gestion du blog',
     'admin.patients': 'Patients',
+    
+    // Admin Authentication
+    'admin.login.title': 'Connexion Admin',
+    'admin.login.subtitle': 'Accédez à votre tableau de bord clinique',
+    'admin.login.email': 'Adresse e-mail',
+    'admin.login.password': 'Mot de passe',
+    'admin.login.sign_in': 'Se connecter',
+    'admin.login.signing_in': 'Connexion en cours...',
+    'admin.logout': 'Déconnexion',
     
     // Blog
     'blog.title': 'Notre Blog',

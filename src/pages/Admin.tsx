@@ -6,9 +6,13 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Switch } from "@/components/ui/switch";
 import { Badge } from "@/components/ui/badge";
-import { Calendar, Users, Settings, FileText, Clock, Phone, Mail, CheckCircle, XCircle } from "lucide-react";
+import { Calendar, Users, Settings, FileText, Clock, Phone, Mail, CheckCircle, XCircle, LogOut } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
+import { useAuth } from "@/contexts/AuthContext";
+import AdminLogin from "@/components/AdminLogin";
+import BlogManager from "@/components/BlogManager";
+import DoctorManager from "@/components/DoctorManager";
 import {
   Table,
   TableBody,
@@ -56,9 +60,22 @@ interface ClinicSettings {
 
 const Admin = () => {
   const { toast } = useToast();
+  const { user, isLoading, logout } = useAuth();
   const [appointments, setAppointments] = useState<Appointment[]>([]);
   const [settings, setSettings] = useState<ClinicSettings | null>(null);
   const [loading, setLoading] = useState(false);
+
+  if (isLoading) {
+    return (
+      <div className="min-h-screen bg-background flex items-center justify-center">
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary"></div>
+      </div>
+    );
+  }
+
+  if (!user) {
+    return <AdminLogin />;
+  }
 
   useEffect(() => {
     fetchAppointments();
@@ -198,16 +215,30 @@ const Admin = () => {
   return (
     <div className="min-h-screen bg-background p-6">
       <div className="container mx-auto">
-        <div className="mb-8">
-          <h1 className="text-3xl font-bold">Admin Dashboard</h1>
-          <p className="text-muted-foreground">Manage appointments and clinic settings</p>
+        <div className="mb-8 flex justify-between items-center">
+          <div>
+            <h1 className="text-3xl font-bold">Admin Dashboard</h1>
+            <p className="text-muted-foreground">Welcome back, {user.name}</p>
+          </div>
+          <Button variant="outline" onClick={logout}>
+            <LogOut className="w-4 h-4 mr-2" />
+            Logout
+          </Button>
         </div>
 
         <Tabs defaultValue="appointments" className="space-y-6">
-          <TabsList className="grid w-full grid-cols-4">
+          <TabsList className="grid w-full grid-cols-5">
             <TabsTrigger value="appointments" className="flex items-center gap-2">
               <Calendar className="w-4 h-4" />
               Appointments
+            </TabsTrigger>
+            <TabsTrigger value="doctors" className="flex items-center gap-2">
+              <Users className="w-4 h-4" />
+              Doctors
+            </TabsTrigger>
+            <TabsTrigger value="blog" className="flex items-center gap-2">
+              <FileText className="w-4 h-4" />
+              Blog
             </TabsTrigger>
             <TabsTrigger value="patients" className="flex items-center gap-2">
               <Users className="w-4 h-4" />
@@ -216,10 +247,6 @@ const Admin = () => {
             <TabsTrigger value="settings" className="flex items-center gap-2">
               <Settings className="w-4 h-4" />
               Settings
-            </TabsTrigger>
-            <TabsTrigger value="blog" className="flex items-center gap-2">
-              <FileText className="w-4 h-4" />
-              Blog
             </TabsTrigger>
           </TabsList>
 
@@ -323,6 +350,14 @@ const Admin = () => {
             </Card>
           </TabsContent>
 
+          <TabsContent value="doctors">
+            <DoctorManager />
+          </TabsContent>
+
+          <TabsContent value="blog">
+            <BlogManager />
+          </TabsContent>
+
           <TabsContent value="patients">
             <Card>
               <CardHeader>
@@ -424,16 +459,6 @@ const Admin = () => {
             )}
           </TabsContent>
 
-          <TabsContent value="blog">
-            <Card>
-              <CardHeader>
-                <CardTitle>Blog Management</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground">Blog management features coming soon...</p>
-              </CardContent>
-            </Card>
-          </TabsContent>
         </Tabs>
       </div>
     </div>
