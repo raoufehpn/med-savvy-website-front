@@ -6,7 +6,9 @@ import { Badge } from "@/components/ui/badge";
 import { Search, Calendar, User } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { useNavigate } from "react-router-dom";
 import { format } from "date-fns";
+import Navigation from "@/components/Navigation";
 
 interface BlogPost {
   id: string;
@@ -41,6 +43,7 @@ interface BlogCategory {
 
 const Blog = () => {
   const { t, language } = useLanguage();
+  const navigate = useNavigate();
   const [posts, setPosts] = useState<BlogPost[]>([]);
   const [categories, setCategories] = useState<BlogCategory[]>([]);
   const [searchTerm, setSearchTerm] = useState('');
@@ -129,13 +132,15 @@ const Blog = () => {
   }
 
   return (
-    <div className="min-h-screen bg-background py-12">
-      <div className="container mx-auto px-4">
-        <div className="max-w-4xl mx-auto">
+    <div className="min-h-screen bg-background">
+      <Navigation />
+      <div className="pt-16 py-12">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
             <h1 className="text-4xl font-bold mb-4">{t('blog.title')}</h1>
             <p className="text-lg text-muted-foreground">
-              Stay updated with the latest health tips and clinic news
+              {t('blog.subtitle')}
             </p>
           </div>
 
@@ -157,7 +162,7 @@ const Blog = () => {
                 size="sm"
                 onClick={() => setSelectedCategory('')}
               >
-                All Categories
+                {t('blog.allCategories')}
               </Button>
               {categories.map((category) => (
                 <Button
@@ -177,7 +182,7 @@ const Blog = () => {
             {filteredPosts.length === 0 ? (
               <Card>
                 <CardContent className="py-12 text-center">
-                  <p className="text-muted-foreground">No blog posts found.</p>
+                  <p className="text-muted-foreground">{t('blog.noPosts')}</p>
                 </CardContent>
               </Card>
             ) : (
@@ -206,7 +211,10 @@ const Blog = () => {
                             {format(new Date(post.published_at), 'MMM dd, yyyy')}
                           </div>
                         </div>
-                        <CardTitle className="text-xl hover:text-primary transition-colors cursor-pointer">
+                        <CardTitle 
+                          className="text-xl hover:text-primary transition-colors cursor-pointer"
+                          onClick={() => navigate(`/blog/${post.slug}`)}
+                        >
                           {getPostTitle(post)}
                         </CardTitle>
                       </CardHeader>
@@ -214,7 +222,11 @@ const Blog = () => {
                         <p className="text-muted-foreground mb-4 line-clamp-3">
                           {getPostExcerpt(post)}
                         </p>
-                        <Button variant="outline" size="sm">
+                        <Button 
+                          variant="outline" 
+                          size="sm"
+                          onClick={() => navigate(`/blog/${post.slug}`)}
+                        >
                           {t('blog.readMore')}
                         </Button>
                       </CardContent>
@@ -223,6 +235,7 @@ const Blog = () => {
                 </Card>
               ))
             )}
+          </div>
           </div>
         </div>
       </div>

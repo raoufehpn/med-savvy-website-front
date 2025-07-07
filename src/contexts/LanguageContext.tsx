@@ -65,6 +65,10 @@ const translations = {
     'blog.readMore': 'Read More',
     'blog.categories': 'Categories',
     'blog.search': 'Search articles...',
+    'blog.backToBlog': 'Back to Blog',
+    'blog.allCategories': 'All Categories',
+    'blog.noPosts': 'No blog posts found.',
+    'blog.subtitle': 'Stay updated with the latest health tips and clinic news',
   },
   ar: {
     // Navigation
@@ -122,6 +126,10 @@ const translations = {
     'blog.readMore': 'اقرأ المزيد',
     'blog.categories': 'الفئات',
     'blog.search': 'البحث في المقالات...',
+    'blog.backToBlog': 'العودة للمدونة',
+    'blog.allCategories': 'جميع الفئات',
+    'blog.noPosts': 'لم يتم العثور على مقالات.',
+    'blog.subtitle': 'ابق على اطلاع بأحدث النصائح الصحية وأخبار العيادة',
   },
   fr: {
     // Navigation
@@ -179,6 +187,10 @@ const translations = {
     'blog.readMore': 'Lire la suite',
     'blog.categories': 'Catégories',
     'blog.search': 'Rechercher des articles...',
+    'blog.backToBlog': 'Retour au Blog',
+    'blog.allCategories': 'Toutes les catégories',
+    'blog.noPosts': 'Aucun article de blog trouvé.',
+    'blog.subtitle': 'Restez informé des derniers conseils de santé et actualités de la clinique',
   }
 };
 

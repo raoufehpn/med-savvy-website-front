@@ -38,13 +38,13 @@ interface Appointment {
   preferred_time: string;
   status: string;
   created_at: string;
-  appointment_types: {
+  appointment_types?: {
     name_en: string;
     color: string;
-  };
-  doctors: {
+  } | null;
+  doctors?: {
     name: string;
-  };
+  } | null;
 }
 
 interface ClinicSettings {
@@ -96,7 +96,7 @@ const Admin = () => {
         .order('created_at', { ascending: false });
 
       if (error) throw error;
-      setAppointments(data || []);
+      setAppointments((data as any) || []);
     } catch (error) {
       console.error('Error fetching appointments:', error);
       toast({
