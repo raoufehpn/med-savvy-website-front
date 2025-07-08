@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const services = [
   {
@@ -34,17 +35,17 @@ const services = [
 ];
 
 const ServicesSection = () => {
+  const { t } = useLanguage();
   return (
     <section className="py-12 sm:py-16 lg:py-24 bg-gradient-hero">
       <div className="container mx-auto px-4 sm:px-6">
         <div className="text-center space-y-4 lg:space-y-6 mb-12 lg:mb-16">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground">
-            Comprehensive
-            <span className="text-primary block">Medical Services</span>
+            {t('services.title')}
+            <span className="text-primary block">{t('services.subtitle')}</span>
           </h2>
           <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto">
-            From routine check-ups to specialized treatments, we offer a full range 
-            of medical services designed to keep you healthy and well.
+            {t('services.description')}
           </p>
         </div>
         
@@ -81,7 +82,7 @@ const ServicesSection = () => {
                 </ul>
                 
                 <Button variant="medical" className="w-full text-sm lg:text-base">
-                  Learn More
+                  {t('services.learnMore')}
                 </Button>
               </div>
             </div>
@@ -90,7 +91,7 @@ const ServicesSection = () => {
         
         <div className="text-center mt-12 lg:mt-16">
           <Button variant="hero" size="lg" className="text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4">
-            Schedule Consultation
+            {t('services.schedule')}
           </Button>
         </div>
       </div>

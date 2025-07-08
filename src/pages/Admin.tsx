@@ -91,7 +91,7 @@ const Admin = () => {
         .select(`
           *,
           appointment_types (name_en, color),
-          doctors (name)
+          doctors!consultations_doctor_id_fkey (name)
         `)
         .order('created_at', { ascending: false });
 

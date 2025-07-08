@@ -62,17 +62,35 @@ const translations = {
     'admin.login.signing_in': 'Signing in...',
     'admin.logout': 'Logout',
     
-    // Blog
-    'blog.title': 'Our Blog',
-    'blog.readMore': 'Read More',
-    'blog.categories': 'Categories',
-    'blog.search': 'Search articles...',
-    'blog.backToBlog': 'Back to Blog',
-    'blog.allCategories': 'All Categories',
-    'blog.noPosts': 'No blog posts found.',
-    'blog.subtitle': 'Stay updated with the latest health tips and clinic news',
-    'blog.blendShowcase': 'Blend Showcase',
-    'blog.filterByTag': 'Filter by tag',
+    // Services Section
+    'services.title': 'Comprehensive',
+    'services.subtitle': 'Medical Services', 
+    'services.description': 'From routine check-ups to specialized treatments, we offer a full range of medical services designed to keep you healthy and well.',
+    'services.learnMore': 'Learn More',
+    'services.schedule': 'Schedule Consultation',
+    
+    // About Section
+    'about.title': 'Your Health is Our',
+    'about.subtitle': 'Priority',
+    'about.description': 'With over 15 years of experience in modern medicine, I am dedicated to providing exceptional healthcare services that combine advanced medical technology with personalized patient care.',
+    'about.viewCredentials': 'View Credentials',
+    
+    // Contact Section  
+    'contact.title': 'Ready to Start Your',
+    'contact.subtitle': 'Health Journey?',
+    'contact.description': 'Take the first step towards better health. Schedule your consultation today and experience personalized medical care that puts you first.',
+    'contact.bookAppointment': 'Book Appointment',
+    'contact.callNow': 'Call Now: (555) 123-4567',
+    'contact.quickContact': 'Quick Contact',
+    'contact.fullName': 'Full Name',
+    'contact.emailAddress': 'Email Address', 
+    'contact.phoneNumber': 'Phone Number',
+    'contact.message': 'Message',
+    'contact.placeholder': 'Tell us about your health concerns or questions',
+    'contact.sendMessage': 'Send Message',
+    'contact.responseTime': "We'll respond within 24 hours to schedule your appointment.",
+    'contact.officeHours': 'Office Hours',
+    'contact.emergencyCare': 'Emergency Care',
     
     // Pages
     'pages.services.title': 'Our Services',
@@ -139,6 +157,36 @@ const translations = {
     'admin.login.signing_in': 'جاري تسجيل الدخول...',
     'admin.logout': 'تسجيل الخروج',
     
+    // Services Section
+    'services.title': 'خدمات',
+    'services.subtitle': 'طبية شاملة', 
+    'services.description': 'من الفحوصات الروتينية إلى العلاجات المتخصصة، نقدم مجموعة كاملة من الخدمات الطبية المصممة للحفاظ على صحتك.',
+    'services.learnMore': 'اعرف المزيد',
+    'services.schedule': 'حدد موعد استشارة',
+    
+    // About Section
+    'about.title': 'صحتك هي',
+    'about.subtitle': 'أولويتنا',
+    'about.description': 'مع أكثر من 15 عامًا من الخبرة في الطب الحديث، أنا ملتزم بتقديم خدمات رعاية صحية استثنائية تجمع بين التكنولوجيا الطبية المتقدمة والرعاية الشخصية للمرضى.',
+    'about.viewCredentials': 'عرض الشهادات',
+    
+    // Contact Section  
+    'contact.title': 'هل أنت مستعد لبدء',
+    'contact.subtitle': 'رحلتك الصحية؟',
+    'contact.description': 'اتخذ الخطوة الأولى نحو صحة أفضل. احجز استشارتك اليوم واختبر الرعاية الطبية الشخصية التي تضعك في المقدمة.',
+    'contact.bookAppointment': 'احجز موعد',
+    'contact.callNow': 'اتصل الآن: (555) 123-4567',
+    'contact.quickContact': 'اتصال سريع',
+    'contact.fullName': 'الاسم الكامل',
+    'contact.emailAddress': 'عنوان البريد الإلكتروني', 
+    'contact.phoneNumber': 'رقم الهاتف',
+    'contact.message': 'الرسالة',
+    'contact.placeholder': 'أخبرنا عن مشاكلك الصحية أو أسئلتك',
+    'contact.sendMessage': 'إرسال الرسالة',
+    'contact.responseTime': 'سنرد في غضون 24 ساعة لجدولة موعدك.',
+    'contact.officeHours': 'ساعات العمل',
+    'contact.emergencyCare': 'الرعاية الطارئة',
+    
     // Blog
     'blog.title': 'مدونتنا',
     'blog.readMore': 'اقرأ المزيد',
@@ -150,18 +198,6 @@ const translations = {
     'blog.subtitle': 'ابق على اطلاع بأحدث النصائح الصحية وأخبار العيادة',
     'blog.blendShowcase': 'معرض المزج',
     'blog.filterByTag': 'تصفية بواسطة العلامة',
-    
-    // Pages
-    'pages.services.title': 'خدماتنا',
-    'pages.services.subtitle': 'رعاية طبية شاملة مصممة حسب احتياجاتك',
-    'pages.about.title': 'عن عيادتنا',
-    'pages.about.subtitle': 'التميز في الرعاية الصحية مع لمسة شخصية',
-    'pages.pricing.title': 'أسعار شفافة',
-    'pages.pricing.subtitle': 'رعاية صحية عالية الجودة بأسعار معقولة',
-    'pages.faqs.title': 'الأسئلة الشائعة',
-    'pages.faqs.subtitle': 'اعثر على إجابات للأسئلة الشائعة حول خدماتنا',
-    'pages.contact.title': 'اتصل بنا',
-    'pages.contact.subtitle': 'تواصل مع فريق الرعاية الصحية لدينا',
   },
   fr: {
     // Navigation
@@ -216,6 +252,36 @@ const translations = {
     'admin.login.signing_in': 'Connexion en cours...',
     'admin.logout': 'Déconnexion',
     
+    // Services Section
+    'services.title': 'Services',
+    'services.subtitle': 'Médicaux Complets', 
+    'services.description': 'Des consultations de routine aux traitements spécialisés, nous offrons une gamme complète de services médicaux conçus pour vous maintenir en bonne santé.',
+    'services.learnMore': 'En Savoir Plus',
+    'services.schedule': 'Programmer une Consultation',
+    
+    // About Section
+    'about.title': 'Votre Santé est Notre',
+    'about.subtitle': 'Priorité',
+    'about.description': 'Avec plus de 15 ans d\'expérience en médecine moderne, je me consacre à fournir des services de soins de santé exceptionnels qui combinent une technologie médicale avancée avec des soins personnalisés aux patients.',
+    'about.viewCredentials': 'Voir les Références',
+    
+    // Contact Section  
+    'contact.title': 'Prêt à Commencer Votre',
+    'contact.subtitle': 'Parcours de Santé?',
+    'contact.description': 'Faites le premier pas vers une meilleure santé. Planifiez votre consultation aujourd\'hui et découvrez des soins médicaux personnalisés qui vous mettent en premier.',
+    'contact.bookAppointment': 'Réserver un Rendez-vous',
+    'contact.callNow': 'Appelez Maintenant: (555) 123-4567',
+    'contact.quickContact': 'Contact Rapide',
+    'contact.fullName': 'Nom Complet',
+    'contact.emailAddress': 'Adresse E-mail', 
+    'contact.phoneNumber': 'Numéro de Téléphone',
+    'contact.message': 'Message',
+    'contact.placeholder': 'Parlez-nous de vos préoccupations de santé ou questions',
+    'contact.sendMessage': 'Envoyer le Message',
+    'contact.responseTime': 'Nous répondrons dans les 24 heures pour programmer votre rendez-vous.',
+    'contact.officeHours': 'Heures de Bureau',
+    'contact.emergencyCare': 'Soins d\'Urgence',
+    
     // Blog
     'blog.title': 'Notre Blog',
     'blog.readMore': 'Lire la suite',
@@ -227,18 +293,6 @@ const translations = {
     'blog.subtitle': 'Restez informé des derniers conseils de santé et actualités de la clinique',
     'blog.blendShowcase': 'Vitrine des Mélanges',
     'blog.filterByTag': 'Filtrer par tag',
-    
-    // Pages
-    'pages.services.title': 'Nos Services',
-    'pages.services.subtitle': 'Soins médicaux complets adaptés à vos besoins',
-    'pages.about.title': 'À Propos de Notre Clinique',
-    'pages.about.subtitle': 'Excellence en soins de santé avec une touche personnelle',
-    'pages.pricing.title': 'Tarification Transparente',
-    'pages.pricing.subtitle': 'Soins de santé de qualité à des tarifs abordables',
-    'pages.faqs.title': 'Questions Fréquemment Posées',
-    'pages.faqs.subtitle': 'Trouvez des réponses aux questions courantes sur nos services',
-    'pages.contact.title': 'Contactez-Nous',
-    'pages.contact.subtitle': 'Contactez notre équipe de soins de santé',
   }
 };
 
