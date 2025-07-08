@@ -17,6 +17,8 @@ const translations = {
     'nav.blog': 'Blog',
     'nav.contact': 'Contact',
     'nav.admin': 'Admin',
+    'nav.pricing': 'Pricing',
+    'nav.faqs': 'FAQs',
     
     // Hero Section
     'hero.badge': 'Trusted Healthcare Provider',
@@ -69,6 +71,20 @@ const translations = {
     'blog.allCategories': 'All Categories',
     'blog.noPosts': 'No blog posts found.',
     'blog.subtitle': 'Stay updated with the latest health tips and clinic news',
+    'blog.blendShowcase': 'Blend Showcase',
+    'blog.filterByTag': 'Filter by tag',
+    
+    // Pages
+    'pages.services.title': 'Our Services',
+    'pages.services.subtitle': 'Comprehensive medical care tailored to your needs',
+    'pages.about.title': 'About Our Clinic',
+    'pages.about.subtitle': 'Excellence in healthcare with a personal touch',
+    'pages.pricing.title': 'Transparent Pricing',
+    'pages.pricing.subtitle': 'Quality healthcare at affordable rates',
+    'pages.faqs.title': 'Frequently Asked Questions',
+    'pages.faqs.subtitle': 'Find answers to common questions about our services',
+    'pages.contact.title': 'Contact Us',
+    'pages.contact.subtitle': 'Get in touch with our healthcare team',
   },
   ar: {
     // Navigation
@@ -78,6 +94,8 @@ const translations = {
     'nav.blog': 'المدونة',
     'nav.contact': 'اتصل بنا',
     'nav.admin': 'الإدارة',
+    'nav.pricing': 'الأسعار',
+    'nav.faqs': 'الأسئلة الشائعة',
     
     // Hero Section
     'hero.badge': 'مقدم رعاية صحية موثوق',
@@ -130,6 +148,20 @@ const translations = {
     'blog.allCategories': 'جميع الفئات',
     'blog.noPosts': 'لم يتم العثور على مقالات.',
     'blog.subtitle': 'ابق على اطلاع بأحدث النصائح الصحية وأخبار العيادة',
+    'blog.blendShowcase': 'معرض المزج',
+    'blog.filterByTag': 'تصفية بواسطة العلامة',
+    
+    // Pages
+    'pages.services.title': 'خدماتنا',
+    'pages.services.subtitle': 'رعاية طبية شاملة مصممة حسب احتياجاتك',
+    'pages.about.title': 'عن عيادتنا',
+    'pages.about.subtitle': 'التميز في الرعاية الصحية مع لمسة شخصية',
+    'pages.pricing.title': 'أسعار شفافة',
+    'pages.pricing.subtitle': 'رعاية صحية عالية الجودة بأسعار معقولة',
+    'pages.faqs.title': 'الأسئلة الشائعة',
+    'pages.faqs.subtitle': 'اعثر على إجابات للأسئلة الشائعة حول خدماتنا',
+    'pages.contact.title': 'اتصل بنا',
+    'pages.contact.subtitle': 'تواصل مع فريق الرعاية الصحية لدينا',
   },
   fr: {
     // Navigation
@@ -139,6 +171,8 @@ const translations = {
     'nav.blog': 'Blog',
     'nav.contact': 'Contact',
     'nav.admin': 'Admin',
+    'nav.pricing': 'Tarifs',
+    'nav.faqs': 'FAQ',
     
     // Hero Section
     'hero.badge': 'Fournisseur de soins de santé de confiance',
@@ -191,6 +225,20 @@ const translations = {
     'blog.allCategories': 'Toutes les catégories',
     'blog.noPosts': 'Aucun article de blog trouvé.',
     'blog.subtitle': 'Restez informé des derniers conseils de santé et actualités de la clinique',
+    'blog.blendShowcase': 'Vitrine des Mélanges',
+    'blog.filterByTag': 'Filtrer par tag',
+    
+    // Pages
+    'pages.services.title': 'Nos Services',
+    'pages.services.subtitle': 'Soins médicaux complets adaptés à vos besoins',
+    'pages.about.title': 'À Propos de Notre Clinique',
+    'pages.about.subtitle': 'Excellence en soins de santé avec une touche personnelle',
+    'pages.pricing.title': 'Tarification Transparente',
+    'pages.pricing.subtitle': 'Soins de santé de qualité à des tarifs abordables',
+    'pages.faqs.title': 'Questions Fréquemment Posées',
+    'pages.faqs.subtitle': 'Trouvez des réponses aux questions courantes sur nos services',
+    'pages.contact.title': 'Contactez-Nous',
+    'pages.contact.subtitle': 'Contactez notre équipe de soins de santé',
   }
 };
 

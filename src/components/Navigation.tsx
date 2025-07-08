@@ -22,26 +22,27 @@ const Navigation = () => {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
-            <Link 
-              to="/" 
-              className="flex items-center space-x-1 text-muted-foreground hover:text-primary transition-colors"
-            >
-              <Home className="w-4 h-4" />
-              <span>{t('nav.home')}</span>
+          <div className="hidden md:flex items-center space-x-6">
+            <Link to="/" className="text-muted-foreground hover:text-primary transition-colors">
+              {t('nav.home')}
             </Link>
-            <Link 
-              to="/blog" 
-              className="flex items-center space-x-1 text-muted-foreground hover:text-primary transition-colors"
-            >
-              <BookOpen className="w-4 h-4" />
-              <span>{t('nav.blog')}</span>
+            <Link to="/services" className="text-muted-foreground hover:text-primary transition-colors">
+              {t('nav.services')}
             </Link>
-            <Link 
-              to="/admin" 
-              className="flex items-center space-x-1 text-muted-foreground hover:text-primary transition-colors"
-            >
-              <span>{t('nav.admin')}</span>
+            <Link to="/about" className="text-muted-foreground hover:text-primary transition-colors">
+              {t('nav.about')}
+            </Link>
+            <Link to="/pricing" className="text-muted-foreground hover:text-primary transition-colors">
+              {t('nav.pricing')}
+            </Link>
+            <Link to="/blog" className="text-muted-foreground hover:text-primary transition-colors">
+              {t('nav.blog')}
+            </Link>
+            <Link to="/faqs" className="text-muted-foreground hover:text-primary transition-colors">
+              {t('nav.faqs')}
+            </Link>
+            <Link to="/contact" className="text-muted-foreground hover:text-primary transition-colors">
+              {t('nav.contact')}
             </Link>
           </div>
 

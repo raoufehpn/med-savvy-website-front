@@ -11,6 +11,12 @@ import BookAppointmentPage from "./components/BookAppointmentPage";
 import Admin from "./pages/Admin";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
+import Services from "./pages/Services";
+import About from "./pages/About";
+import Pricing from "./pages/Pricing";
+import FAQs from "./pages/FAQs";
+import Contact from "./pages/Contact";
+import BlendShowcase from "./pages/BlendShowcase";
 
 const queryClient = new QueryClient();
 
@@ -24,9 +30,15 @@ const App = () => (
           <BrowserRouter>
             <Routes>
               <Route path="/" element={<Index />} />
+              <Route path="/services" element={<Services />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/pricing" element={<Pricing />} />
+              <Route path="/faqs" element={<FAQs />} />
+              <Route path="/contact" element={<Contact />} />
               <Route path="/book-appointment" element={<BookAppointmentPage />} />
               <Route path="/admin" element={<Admin />} />
               <Route path="/blog" element={<Blog />} />
+              <Route path="/blog/blend-showcase" element={<BlendShowcase />} />
               <Route path="/blog/:slug" element={<BlogPost />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
